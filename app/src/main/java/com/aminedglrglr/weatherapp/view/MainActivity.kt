@@ -70,8 +70,47 @@ class MainActivity : AppCompatActivity() {
                 temp_max.text=  data.main.tempMax.toString()
                 temp_min.text=   data.main.tempMin.toString()
 
-                Glide.with(this).load( "http://openweathermap.org/img/wn/" + data.weather[0].icon + ".png")
-                    .into(iconWeather)
+                if(data.weather[0].description=="few clouds"){
+                    Glide.with(this).load(R.drawable.cloud)
+                        .into(iconWeather)
+                }
+                else if(data.weather[0].description=="clear sky"){
+                    Glide.with(this).load(R.drawable.sunny)
+                        .into(iconWeather)
+                }
+                else if(data.weather[0].description=="scattered clouds"){
+                    Glide.with(this).load(R.drawable.stratuscumulus)
+                        .into(iconWeather)
+                }
+                else if(data.weather[0].description=="broken clouds"){
+                    Glide.with(this).load(R.drawable.cloud)
+                        .into(iconWeather)
+                }
+                else if(data.weather[0].description=="shower rain"){
+                    Glide.with(this).load(R.drawable.rain)
+                        .into(iconWeather)
+                }
+                else if(data.weather[0].description=="rain"){
+                    Glide.with(this).load(R.drawable.rain)
+                        .into(iconWeather)
+                }
+                else if(data.weather[0].description=="thunderstorm"){
+                    Glide.with(this).load(R.drawable.storm)
+                        .into(iconWeather)
+                }
+                else if(data.weather[0].description=="mist"){
+                    Glide.with(this).load(R.drawable.cumulus)
+                        .into(iconWeather)
+                }
+                else if(data.weather[0].description=="snow"){
+                    Glide.with(this).load(R.drawable.winter)
+                        .into(iconWeather)
+                }
+                else{
+                    Glide.with(this).load( "http://openweathermap.org/img/wn/" + data.weather[0].icon + ".png")
+                        .into(iconWeather)
+                }
+
 
 
             }

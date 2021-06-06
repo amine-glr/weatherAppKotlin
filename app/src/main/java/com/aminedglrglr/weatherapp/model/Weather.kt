@@ -12,4 +12,6 @@ data class Weather(
     val id: Int,
     @SerializedName("main")
     val main: String
+
+
 )
