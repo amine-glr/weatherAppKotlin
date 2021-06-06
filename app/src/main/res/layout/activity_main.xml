@@ -19,7 +19,7 @@
             android:id="@+id/tv_error"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Error, Try Again!"
+            android:text="Something went wrong!"
             android:padding="15dp"
             android:background="#4DFFFFFF"
             android:visibility="gone"
@@ -44,6 +44,8 @@
             android:weightSum="100"
             android:orientation="horizontal" >
             <EditText
+                android:inputType="text"
+                android:autofillHints="@string/app_name"
             android:id="@+id/findCity"
             android:layout_weight="70"
             android:layout_width="0dp"
@@ -91,7 +93,7 @@
                     android:id="@+id/degree"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="0C"
+                    android:text="°C"
                     android:textSize="30sp"
                     android:textStyle="bold" />
 
