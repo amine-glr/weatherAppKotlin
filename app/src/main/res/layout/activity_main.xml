@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:id="@+id/refresh_layout"
-    android:background="#3E7DD1"
+    android:background="#1E62BC"
     tools:context=".view.MainActivity">
 
     <LinearLayout
@@ -39,6 +39,7 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
          <LinearLayout
+             android:layout_marginTop="20dp"
             android:layout_width="match_parent"
              android:layout_height="wrap_content"
             android:weightSum="100"
@@ -60,7 +61,7 @@
             android:layout_width="0dp"
             android:layout_height="45dp"
             android:layout_weight="30"
-            android:background="@drawable/button_design"
+            android:background="@color/cardview_shadow_start_color"
             android:text="Search" > </Button>
 
 
@@ -72,8 +73,9 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         android:layout_gravity="center_horizontal"
-        android:layout_marginTop="40dp">
+        android:layout_marginTop="100dp">
             <ImageView
+                android:layout_marginLeft="20dp"
             android:layout_width="150dp"
             android:layout_height="150dp"
             android:src="@drawable/cloud"
@@ -86,7 +88,7 @@
                 android:id="@+id/dataView"
                 android:layout_width="match_parent"
                 android:layout_height="136dp"
-                android:layout_marginLeft="15dp"
+                android:layout_marginLeft="50dp"
                 android:orientation="vertical">
 
                 <TextView
@@ -120,8 +122,9 @@
 
     </LinearLayout>
         <LinearLayout
+
             android:orientation="vertical"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="70dp"
             android:paddingTop="5dp"
             android:paddingBottom="5dp"
             android:paddingLeft="10dp"
@@ -130,44 +133,134 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
                 <TextView
-                    android:id="@+id/humidity"
-                    android:text="Humidity: "
+                    android:id="@+id/humidityText"
+                    android:text="Humidity:  % "
                     android:textSize="22sp"
                     android:textColor="@color/white"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content">
 
                 </TextView>
-            <TextView
-                android:id="@+id/temp_max"
-                android:text="Max Temperature: "
-                android:textSize="22sp"
-                android:textColor="@color/white"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+                <TextView
+                    android:id="@+id/humidity"
+                    android:text="0"
+                    android:textSize="22sp"
+                    android:textColor="@color/white"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
 
-            </TextView>
-            <TextView
-                android:id="@+id/temp_min"
-                android:text="Min Temperature: "
-                android:textSize="22sp"
-                android:textColor="@color/white"
-                android:layout_width="match_parent"
+                </TextView>
+            </LinearLayout>
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content">
+                <TextView
+                    android:id="@+id/temp_max_text"
+                    android:text="Max Temperature: "
+                    android:textSize="22sp"
+                    android:textColor="@color/white"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
 
-            </TextView>
+                </TextView>
+                <TextView
+                    android:id="@+id/temp_max"
+                    android:text="0"
+                    android:paddingLeft="15dp"
+                    android:textSize="22sp"
+                    android:textColor="@color/white"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                </TextView>
+
+            </LinearLayout>
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:id="@+id/temp_min_text"
+                    android:text="Min Temperature: "
+                    android:textSize="22sp"
+                    android:textColor="@color/white"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                </TextView>
+                <TextView
+                    android:paddingLeft="20dp"
+                    android:id="@+id/temp_min"
+                    android:text="0"
+                    android:textSize="22sp"
+                    android:textColor="@color/white"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                </TextView>
+
+            </LinearLayout>
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:id="@+id/speed_text"
+                    android:text="Wind Speed: "
+                    android:textSize="22sp"
+                    android:textColor="@color/white"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                </TextView>
+                <TextView
+                    android:paddingLeft="10dp"
+                    android:id="@+id/speed"
+                    android:text="0"
+                    android:textSize="22sp"
+                    android:textColor="@color/white"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                </TextView>
+
+            </LinearLayout>
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:id="@+id/feels_text"
+                    android:text="Feels Like: "
+                    android:textSize="22sp"
+                    android:textColor="@color/white"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                </TextView>
+                <TextView
+                    android:paddingLeft="10dp"
+                    android:id="@+id/feels"
+                    android:text="0"
+                    android:textSize="22sp"
+                    android:textColor="@color/white"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                </TextView>
+
+            </LinearLayout>
+
 
         </LinearLayout>
 
-            <ListView
-                android:id="@+id/dailyweather"
-                android:layout_marginTop="10dp"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent">
 
-
-            </ListView>
 
 
 

@@ -12,7 +12,7 @@ import com.aminedglrglr.weatherapp.R
 import com.aminedglrglr.weatherapp.viewmodel.MainViewModel
 import com.bumptech.glide.Glide
 import kotlinx.android.synthetic.main.activity_main.*
-private const val TAG = "MainActivity"
+
 
 class MainActivity : AppCompatActivity() {
 
@@ -53,22 +53,29 @@ class MainActivity : AppCompatActivity() {
             set.apply()
             viewModel.refreshData(cityName)
             getLiveData()
-            Log.i(TAG, "onCreate: $cityName")
+            Log.i("MainActivity", "onCreate: $cityName")
         }
 
     }
+
+
+
 
     private fun getLiveData() {
         viewModel.weather_data.observe(this,  { data ->
             data?.let {
                 dataView.visibility= View.VISIBLE
                 pb_loading.visibility=View.GONE
+
                 degree.text= data.main.temp.toString()
                 Country.text= data.sys.country
                 CityName.text= data.name
+
                 humidity.text= data.main.humidity.toString()
-                temp_max.text=  data.main.tempMax.toString()
-                temp_min.text=   data.main.tempMin.toString()
+                temp_max.text=  data.main.tempMax.toString() + "°C"
+                temp_min.text=   data.main.tempMin.toString()+ "°C"
+                feels.text=data.main.feelsLike.toString() + "°C"
+                speed.text=data.wind.speed.toString() +"m/s"
 
                 if(data.weather[0].description=="few clouds"){
                     Glide.with(this).load(R.drawable.cloud)
